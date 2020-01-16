@@ -1,8 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import GlobalStyle from './style/globalstyle';
 import Client from './components/client';
 
-ReactDOM.render(
-  <Client/>,
-  document.querySelector('#root')
-);
+const App = () => {
+  return (
+    <>
+      <GlobalStyle/>
+      <Client />
+    </>
+  );
+};
+
+export default App;
