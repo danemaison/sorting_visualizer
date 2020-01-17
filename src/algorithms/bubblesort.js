@@ -1,10 +1,9 @@
 const bubbleSort = async ([...arr]) => {
   let swapped;
-
   do {
     swapped = false;
     for (let i = 0; i < arr.length - 1; i++) {
-      if (arr[i].height < arr[i + 1].height) {
+      if (arr[i].height > arr[i + 1].height) {
         await swap(arr, i);
         swapped = true;
       }
@@ -23,7 +22,7 @@ const swap = (arr, index) => {
       arr[index] = arr[index + 1];
       arr[index + 1] = temp;
       resolve();
-    }, 50)
+    }, 0)
   );
 };
 

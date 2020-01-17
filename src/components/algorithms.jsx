@@ -2,15 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Button = styled.button`
-  margin:8px 0;
+  margin: 8px 0;
   border: 3px solid white;
   background: transparent;
-  border-radius:0;
-  text-transform:uppercase;
-  padding:10px 25px;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px 25px;
+  cursor:pointer;
 `;
 
-const algorithms = ['Merge Sort', 'Quick Sort', 'Heap Sort', 'Bubble Sort'];
+const algorithms = ['Bubble Sort', 'Quick Sort', 'Heap Sort', 'Merge Sort'];
 
 const AlgorithmList = ({ setAlgorithm }) => {
   return (
