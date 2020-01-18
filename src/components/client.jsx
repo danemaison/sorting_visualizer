@@ -64,9 +64,9 @@ const Client = () => {
   const [itemsToSort, setItemsToSort] = useState([]);
 
   const sort = () => {
-    // const arr = mergeSort(itemsToSort);
-    // console.log(arr);
-    bubbleSort(itemsToSort);
+    const arr = mergeSort(itemsToSort);
+    console.log(arr);
+    // bubbleSort(itemsToSort);
   };
   const randomizeData = useCallback(() => {
     const items = [];

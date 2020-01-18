@@ -10,9 +10,19 @@ const merge = (left, right) => {
   let result = []; let leftIndex = 0; let rightIndex = 0;
   while (leftIndex < left.length && rightIndex < right.length) {
     if (left[leftIndex].height < right[rightIndex].height) {
+      setTimeout(() => {
+        const temp = right[rightIndex].ref.current.left;
+        right[rightIndex].ref.current.left = left[leftIndex].ref.current.left;
+        left[leftIndex].ref.current.left = temp;
+      }, 50 * rightIndex);
       result.push(left[leftIndex]);
       leftIndex++;
     } else {
+      setTimeout(() => {
+        const temp = left[leftIndex].ref.current.left;
+        left[leftIndex].ref.current.left = right[rightIndex].ref.current.left;
+        right[rightIndex].ref.current.left = temp;
+      }, 50 * leftIndex);
       result.push(right[rightIndex]);
       rightIndex++;
     }
