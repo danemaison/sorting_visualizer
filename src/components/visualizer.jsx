@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -18,14 +18,15 @@ const Bar = styled.div`
 `;
 
 const Visualizer = ({ items }) => {
+  console.log(items);
   return (
     <Container>
-      {items.map(item => (
+      {items.map((item, index) => (
         <Bar
           ref={item.ref}
           style={{
             height: `${item.height}%`,
-            left: `${item.left}%` }}
+            left: `${item.left + 1}%` }}
           key={item.height}
         />
       ))}

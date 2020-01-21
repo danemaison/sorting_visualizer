@@ -60,14 +60,20 @@ const Algorithm = styled.div`
 `;
 
 const Client = () => {
-  const [algorithm, setAlgorithm] = useState('Bubble Sort');
+  const [algorithm, setAlgorithm] = useState('Merge Sort');
   const [itemsToSort, setItemsToSort] = useState([]);
 
   const sort = () => {
-    const arr = mergeSort(itemsToSort);
-    console.log(arr);
-    // bubbleSort(itemsToSort);
+    switch (algorithm) {
+      case 'Bubble Sort':
+        bubbleSort(itemsToSort);
+        break;
+      case 'Merge Sort':
+        mergeSort(itemsToSort);
+        break;
+    }
   };
+
   const randomizeData = useCallback(() => {
     const items = [];
     for (let i = 0; i < 98; i++) {
