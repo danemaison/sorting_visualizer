@@ -1,5 +1,10 @@
 let ops = 0;
 let delay = 50;
+
+const setPosition = (arr, index, positions, counter) => {
+  arr[index].ref.current.style.left = `${positions[counter] + 1}%`;
+};
+
 const mergeSort = ([...arr]) => {
   if (arr.length <= 1) return arr;
   const middle = Math.floor(arr.length / 2);
@@ -10,26 +15,25 @@ const mergeSort = ([...arr]) => {
 
 const merge = (left, right) => {
   ops++;
-
   const positions = [];
-  for (let i = 0; i < left.length; i++) {
-    positions.push(left[i].left);
-  }
-  for (let i = 0; i < right.length; i++) {
-    positions.push(right[i].left);
-  }
   let result = [];
   let leftIndex = 0;
   let rightIndex = 0;
   let counter = 0;
+
+  left.forEach(item => {
+    positions.push(item.left);
+  });
+  right.forEach(item => {
+    positions.push(item.left);
+  });
+
   while (leftIndex <= left.length && rightIndex <= right.length) {
     if (leftIndex === left.length && rightIndex === right.length) {
       break;
     } else if (leftIndex === left.length) {
       setTimeout(
-        (arr, index, positions, counter) => {
-          arr[index].ref.current.style.left = `${positions[counter] + 1}%`;
-        },
+        setPosition,
         delay * ops,
         right,
         rightIndex,
@@ -40,38 +44,18 @@ const merge = (left, right) => {
       result.push(right[rightIndex]);
       rightIndex++;
     } else if (rightIndex === right.length) {
-      setTimeout(
-        (arr, index, positions, counter) => {
-          arr[index].ref.current.style.left = `${positions[counter] + 1}%`;
-        },
-        delay * ops,
-        left,
-        leftIndex,
-        positions,
-        counter
-      );
+      setTimeout(setPosition, delay * ops, left, leftIndex, positions, counter);
       left[leftIndex].left = positions[counter];
       result.push(left[leftIndex]);
       leftIndex++;
     } else if (left[leftIndex].height < right[rightIndex].height) {
-      setTimeout(
-        (arr, index, positions, counter) => {
-          arr[index].ref.current.style.left = `${positions[counter] + 1}%`;
-        },
-        delay * ops,
-        left,
-        leftIndex,
-        positions,
-        counter
-      );
+      setTimeout(setPosition, delay * ops, left, leftIndex, positions, counter);
       left[leftIndex].left = positions[counter];
       result.push(left[leftIndex]);
       leftIndex++;
     } else {
       setTimeout(
-        (arr, index, positions, counter) => {
-          arr[index].ref.current.style.left = `${positions[counter] + 1}%`;
-        },
+        setPosition,
         delay * ops,
         right,
         rightIndex,

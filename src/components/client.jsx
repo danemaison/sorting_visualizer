@@ -76,7 +76,7 @@ const Client = () => {
 
   const randomizeData = useCallback(() => {
     const items = [];
-    for (let i = 0; i < 98; i++) {
+    for (let i = 0; i < 97; i++) {
       const height = Math.random() * (98 - 5) + 5;
       const left = i + 1;
       const ref = createRef();
