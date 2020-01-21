@@ -11,8 +11,8 @@ const Button = styled.button`
   font-weight: bold;
   padding: 10px 25px;
   cursor:pointer;
-  :active{
-    text-outline:none;
+  :focus{
+    outline:3px solid rgba(0, 255, 0, .25);
   }
 
 `;
