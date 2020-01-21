@@ -40,27 +40,30 @@ const VisualizerColumn = styled(Col)`
 const Button = styled.button`
   font-weight:bold;
   margin: 8px 0;
-  border: 3px solid white;
+  border: 3px solid green;
   background: green;
-  border-radius: 50px;
+  /* border-radius: 50px; */
   text-transform: uppercase;
   padding: 10px 25px;
   cursor:pointer;
 `;
 
 const RandomizeButton = styled(Button)`
+  margin-top: 15px;
   background-color: darkred;
+  border-color: darkred;
 `;
 
 const Algorithm = styled.div`
   text-align: center;
+  text-transform:uppercase;
   font-size: 2rem;
   font-weight: bold;
   padding-bottom: 6px;
 `;
 
 const Client = () => {
-  const [algorithm, setAlgorithm] = useState('Merge Sort');
+  const [algorithm, setAlgorithm] = useState('Bubble Sort');
   const [itemsToSort, setItemsToSort] = useState([]);
 
   const sort = () => {

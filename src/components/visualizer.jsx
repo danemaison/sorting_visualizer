@@ -18,7 +18,6 @@ const Bar = styled.div`
 `;
 
 const Visualizer = ({ items }) => {
-  console.log(items);
   return (
     <Container>
       {items.map((item, index) => (
