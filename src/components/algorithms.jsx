@@ -10,9 +10,10 @@ const Button = styled.button`
   text-transform: uppercase;
   font-weight: bold;
   padding: 10px 25px;
+  transition: .2s;
   cursor:pointer;
   :focus{
-    outline:3px solid rgba(0, 255, 0, .25);
+    outline:3px solid rgba(255, 255, 255, .11);
   }
 
 `;

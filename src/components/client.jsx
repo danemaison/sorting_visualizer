@@ -32,7 +32,9 @@ const Col = styled.div`
 `;
 
 const ButtonCol = styled(Col)`
-  padding-right: 16px;
+  @media ${({ theme }) => theme.mediaQueries.small} {
+    padding-right: 16px;
+  }
 `;
 const VisualizerColumn = styled(Col)`
   align-items: center;
@@ -42,7 +44,6 @@ const Button = styled.button`
   margin: 8px 0;
   border: 3px solid green;
   background: green;
-  /* border-radius: 50px; */
   text-transform: uppercase;
   padding: 10px 25px;
   cursor:pointer;
