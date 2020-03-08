@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Algorithms from './algorithms';
 import Visualizer from './visualizer';
 import { bubbleSort } from '../algorithms/bubblesort';
-import { mergeSort } from '../algorithms/mergesort';
+import mergeSort from '../algorithms/mergesort';
 
 const Container = styled.main`
   width: 100%;
